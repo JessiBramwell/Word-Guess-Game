@@ -7,28 +7,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Hangman</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <div id="sketch"></div>
-                <div id="viewer"></div>
-                <div class="start">
-                    <button id="start">Click to Play</button>
+        <h1>Web Colors</h1>
+        <div class="d-flex">
+            <div id="game" class="d-flex justify-content-center flex-column flex-grow">
+                <div class="d-flex  mx-auto" id="sketch">
+                    <svg id="stick-figure" viewbox="0 0 420 420" height="420" width="410">
+                        <line id="ln-0" class="hangman" x1="100" y1="350" x2="300" y2="350"></line>
+                        <line id="ln-1" class="hangman" x1="150" y1="350" x2="150" y2="100"></line>
+                        <line id="ln-2" class="hangman" x1="150" y1="100" x2="250" y2="100"></line>
+                        <line id="ln-3" class="hangman" x1="250" y1="100" x2="250" y2="130"></line>
+                        <circle id="ln-4" class="hangman" cx="250" cy="150" r="20"></circle>
+                        <line id="ln-5" class="hangman" x1="250" y1="170" x2="250" y2="230"></line>
+                        <line id="ln-6" class="hangman" x1="250" y1="180" x2="210" y2="200"></line>
+                        <line id="ln-7" class="hangman" x1="250" y1="180" x2="290" y2="200"></line>
+                        <line id="ln-8" class="hangman" x1="250" y1="230" x2="230" y2="280"></line>
+                        <line id="ln-9" class="hangman" x1="250" y1="230" x2="270" y2="280"></line>
+                    </svg>
+
                 </div>
+                <div class="mx-auto" id="viewer"></div>
             </div>
-            <div class="col">
+            <div id="game-stats" class="mx-auto stats">
+                <h5>Won: <span id="won"></span></h5>
+                <h5>Lost: <span id="lost"></span></h5>
+                <h5 class="text-center">Guessed:</h5>
                 <div id="stats"></div>
             </div>
-
         </div>
+        <div class="mx-auto d-flex justify-content-end">
+            <button class="btn btn-dark" id="next">Start</button>
+        </div>
+        <!-- <div id='start' class="mx-auto">
+            <h1>Press any key to get started!</h1>
+        </div> -->
     </div>
-
-
 
     <script src="assets/javascript/game.js"></script>
 </body>
